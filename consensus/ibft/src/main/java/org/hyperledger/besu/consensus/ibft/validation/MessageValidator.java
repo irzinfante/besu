@@ -63,7 +63,7 @@ public class MessageValidator {
     if (rejectEmptyBlock(msg.getBlock())) {
       return false;
     }
-    
+
     if (!validateBlock(msg.getBlock())) {
       return false;
     }
@@ -76,9 +76,9 @@ public class MessageValidator {
     return proposalConsistencyValidator.validateProposalMatchesBlock(
         msg.getSignedPayload(), msg.getBlock());
   }
-  
+
   private boolean rejectEmptyBlock(final Block block) {
-    if(block.getBody().getTransactions().size() <= 0) {
+    if (block.getBody().getTransactions().size() <= 0) {
       LOG.info("Invalid Proposal message, empty block did not pass validation.");
       return true;
     }
