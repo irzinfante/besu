@@ -126,6 +126,10 @@ public class IbftRound {
       LOG.warn("Failed to create a signed Proposal, waiting for next round.", e);
       return;
     }
+    if (block.getBody().getTransactions().size() <= 0) {
+      LOG.info("Discarded empty block Proposal, waiting for next round.");
+      return;
+    }
 
     transmitter.multicastProposal(
         proposal.getRoundIdentifier(), proposal.getBlock(), proposal.getRoundChangeCertificate());
