@@ -71,3 +71,7 @@ and <a href="https://www.yourkit.com/youmonitor/">YourKit YouMonitor</a>.
 [Besu User Documentation]: https://besu.hyperledger.org
 [RocketChat]: https://chat.hyperledger.org/
 [Contributing Guidelines]: CONTRIBUTING.md
+
+## Changelog
+- 17/04/2022. Added code to reject proposed empty blocks by other validator in IBFT 2.0 consensus protocol.
+- 12/06/2022. Added code to skip proposing blocks with 0 tx in IBFT 2.0 consensus protocol.
